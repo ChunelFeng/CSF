@@ -1,0 +1,3 @@
+[submodule "3rd-party/CGraph"]
+	path = 3rd-party/CGraph
+	url = git@github.com:ChunelFeng/CGraph.git
