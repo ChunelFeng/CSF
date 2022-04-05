@@ -13,14 +13,11 @@
 
 #include "../../3rd-party/CGraph/src/CGraph.h"
 
-struct CSFParam : public CGraph::GParam {
+struct CSFParam : public CGraph::DAnnParam {
     int neighbor_ = 0;
-    std::string model_path_;
-    std::string train_file_path_;
 
     CVoid reset() override {
-        neighbor_ = 0;
-        model_path_ = "";
+        dim_ = 0;
         train_file_path_ = "";
     }
 };

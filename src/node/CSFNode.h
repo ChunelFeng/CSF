@@ -11,16 +11,16 @@
 
 #include "../../3rd-party/CGraph/src/CGraph.h"
 
-class CSFNode : public CGraph::GNode {
+class CSFNode : public CGraph::DAnnNode {
 public:
     CStatus init() override;
 
-    CStatus run() override;
-
     CStatus destroy() override;
 
+    CStatus train() override;
+
 protected:
-    CStatus prepareParam();
+    DAnnFuncType prepareParam() override;
 };
 
 #endif //CSF_CSFNODE_H

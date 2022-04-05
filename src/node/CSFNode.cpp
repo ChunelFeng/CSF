@@ -20,28 +20,23 @@ CStatus CSFNode::init() {
 }
 
 
-CStatus CSFNode::run() {
-    CGRAPH_FUNCTION_BEGIN
-    status = prepareParam();
-    CGRAPH_FUNCTION_CHECK_STATUS
-
-    auto param = CGRAPH_GET_GPARAM(CSFParam, CSF_PARAM)
-    CGRAPH_ECHO("calc neighbor is [%d]", param->neighbor_);
-
-    return status;
-}
-
-
 CStatus CSFNode::destroy() {
     return CStatus();
 }
 
 
-CStatus CSFNode::prepareParam() {
+CStatus CSFNode::train() {
+    auto* param = CGRAPH_GET_GPARAM(CSFParam, CSF_PARAM)
+    CGRAPH_ECHO("csf train ... , neighbor_ = [%d] ", param->neighbor_);
+
+    return CStatus();
+}
+
+
+DAnnFuncType CSFNode::prepareParam() {
     CGRAPH_FUNCTION_BEGIN
-    auto param = CGRAPH_GET_GPARAM(CSFParam, CSF_PARAM)
-    CGRAPH_ASSERT_NOT_NULL(param)
+    auto* param = CGRAPH_GET_GPARAM(CSFParam, CSF_PARAM)
 
     param->neighbor_ = 10;    // 随意修改参数信息
-    CGRAPH_FUNCTION_END
+    return DAnnFuncType::ANN_TRAIN;
 }
