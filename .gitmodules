@@ -1,3 +1,6 @@
 [submodule "3rd-party/CGraph"]
 	path = 3rd-party/CGraph
 	url = git@github.com:ChunelFeng/CGraph.git
+[submodule "3rd-party/json-parser"]
+	path = 3rd-party/json-parser
+	url = git@github.com:Barenboim/json-parser.git
